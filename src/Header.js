@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Group, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Logo from "./assets/icons/learnable.png"
 import classes from './HeaderSimple.module.css';
+
+import wifilogo from "./assets/icons/wifi.png"
+import batterylogo from "./assets/icons/battery.png"
 
 const links = [
   { link: '/about', label: 'Features' },
@@ -14,6 +17,8 @@ const links = [
 export default function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
+  const [dateTime, setDateTime] = useState(new Date().toLocaleString());
+
 
   const items = links.map((link) => (
     <a
@@ -30,17 +35,26 @@ export default function HeaderSimple() {
     </a>
   ));
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDateTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+
   return (
-    <header className={classes.header} style={{height : 80}}>
-      <Container size="md" className={classes.inner}>
+    <header className={classes.header + " .glass"} style={{height : 80}}>
+      <Container size="md" className={classes.inner} style={{paddingTop : 10}}>
         <Group>
-        <img src={Logo} style={{height : 60 , width : 60}}/>
-        <span style={{fontSize : 50}}>Learnable</span>
+        <span style={{fontSize : 40}}>D∇LTA</span>
+        <img src={wifilogo}  style={{height : 30 , width: 60}}/>
+        <img src={batterylogo} style={{height : 40, width : 45}}/>
         </Group>
         
         <Group>
-            <span>6th Feb 2024</span>
-            <span>6:30 P.M</span>
+            <span style={{fontSize : 30}} >{dateTime}</span>
         </Group>
         
       </Container>

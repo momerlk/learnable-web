@@ -10,9 +10,9 @@
   justify-content: space-between; /* or any other value */
   gap: 100px; /* specify the desired space between items */
   
-  margin-bottom : 80px;
-  margin-left : 100px;
-  padding : 20px;
+  margin-bottom : 15px;
+  margin-left : 7%;
+  padding : 12px;
   align-items: center;
 
   /* glassmorphism */
@@ -31,7 +31,7 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-  background : url("./assets/images/rocket.png");
+  background : url("./assets/images/community.png");
 }
 
 html {
@@ -49,7 +49,17 @@ html {
 }
 
 .icon {
-  width: 100px; /* Adjust the size of the icon as needed */
-  height: 100px;
+  width: 86px; /* Adjust the size of the icon as needed */
+  height: 86px;
   border-radius: 20px;
+}
+
+.glass {
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.56);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.8px);
+-webkit-backdrop-filter: blur(10.8px);
+border: 1px solid rgba(255, 255, 255, 0.62);
 }

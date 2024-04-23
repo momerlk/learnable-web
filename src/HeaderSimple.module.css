@@ -1,8 +1,19 @@
 .header {
   height: rem(56px);
   margin-bottom: rem(120px);
-  background-color: var(--mantine-color-body);
   border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+
+  margin-top : 20px;
+  margin-left : 190px;
+  margin-right : 385px;
+
+  color : white;
+  background: rgba(59, 59, 59, 0.77);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
+
 }
 
 .inner {

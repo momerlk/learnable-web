@@ -7,15 +7,24 @@ import {
 
 import { Grid, Skeleton, Container } from '@mantine/core';
 import Header from "./Header"
-
+import SwipeView from "./swipe"
 
 import vscodelogo from "./assets/icons/visual_studio.png"
 import chromelogo from "./assets/icons/chrome.jpg"
-import discordlogo from "./assets/icons/discord.png"
-import spotifylogo from "./assets/icons/spotify.png"
-import messengerlogo from "./assets/icons/messenger.png"
-import evernotelogo from "./assets/icons/evernote.png"
-import tabbylogo from "./assets/icons/tabby.png"
+import discordlogo from "./assets/icons/scratch.jpg"
+import spotifylogo from "./assets/icons/youtube.jpg"
+
+
+
+// new
+import khanacademylogo from "./assets/icons/khanacademy.jpg"
+import courseralogo from "./assets/icons/couresra.png"
+import edkasalogo from "./assets/icons/edkasa.png"
+import noteslogo from "./assets/icons/notes.jpg"
+import settingslogo from "./assets/icons/settings.jpg"
+
+// -
+import tabbylogo from "./assets/icons/books.png"
 
 
 function openApp(application){
@@ -48,6 +57,73 @@ function IconButton(props) {
   );
 }
 
+function Tab1(){
+  return (
+    <Grid>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={noteslogo} onClick={() => openApp("notes")} label="notes" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={courseralogo} onClick={() => openApp("coursera")} label="coursera" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={khanacademylogo} onClick={() => openApp("khanacademy")} label="khanacademy" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={settingslogo} onClick={() => openApp("settings")} label="settings" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={edkasalogo} onClick={() => openApp("edkasa")} label="edkasa" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={spotifylogo} onClick={() => openApp("youtube")} label="youtube kids" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={discordlogo} onClick={() => openApp("scratch")} label="scratch" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          
+          <IconButton icon={tabbylogo} onClick={() => openApp("books")} label="books" />
+        </Grid.Col>
+
+
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={chromelogo} onClick={() => openApp("chrome")} label="chrome" />
+        </Grid.Col>
+
+
+      </Grid>
+  )
+}
+
+function Tab2(){
+  return (
+    <Grid>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={noteslogo} onClick={() => openApp("notes")} label="notes" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={courseralogo} onClick={() => openApp("coursera")} label="coursera" />
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, xs: 4 }}>
+          <IconButton icon={khanacademylogo} onClick={() => openApp("khanacademy")} label="khanacademy" />
+        </Grid.Col>
+
+      </Grid>
+  )
+}
 
 function App() {
   const navigate = useNavigate();
@@ -55,46 +131,27 @@ function App() {
     <div className="App">
       <Header />
       <Container my="md" >
-        <div style={{marginTop : 100}}></div>
-      <Grid>
+        <div style={{marginTop : 50}}></div>
 
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={vscodelogo} onClick={() => openApp("vscode")} label="code" />
-        </Grid.Col>
 
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={spotifylogo} onClick={() => openApp("spotify")} label="spotify" />
-        </Grid.Col>
-
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={discordlogo} onClick={() => openApp("discord")} label="discord" />
-        </Grid.Col>
-
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={evernotelogo} onClick={() => openApp("evernote")} label="evernote" />
-        </Grid.Col>
-
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={messengerlogo} onClick={() => openApp("messenger")} label="messenger" />
-        </Grid.Col>
-
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={chromelogo} onClick={() => openApp("chrome")} label="chrome" />
-        </Grid.Col>
-
-        <Grid.Col span={{ base: 12, xs: 4 }}>
-          <IconButton icon={tabbylogo} onClick={() => openApp("tabby")} label="tabby" />
-        </Grid.Col>
-
-      </Grid>
+      <SwipableCarousel>
+        <div style={{ backgroundColor: "red", width: "100%", height: "100%" }}>
+          View 1
+        </div>
+        <div style={{ backgroundColor: "blue", width: "100%", height: "100%" }}>
+          View 2
+        </div>
+        <div style={{ backgroundColor: "green", width: "100%", height: "100%" }}>
+          View 3
+        </div>
+      </SwipableCarousel>
 
       <div className="bottom-apps"> 
           <IconButton icon={vscodelogo} onClick={() => openApp("vscode")} label="code" />
 
           <IconButton icon={chromelogo} onClick={() => openApp("chrome")} label="chrome" />
 
-          <IconButton icon={messengerlogo} onClick={() => openApp("messenger")} label="messenger" />
-
+          <IconButton icon={spotifylogo} onClick={() => openApp("youtube")} label="youtube" />
       </div>
     </Container>
       
